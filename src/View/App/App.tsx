@@ -1,29 +1,17 @@
+import { FunctionComponent } from "react";
 import * as React from "react";
 import "./App.css";
 
-import logo from "./../../logo.svg";
-
-class App extends React.Component {
-  public render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title" onClick={this.handleClick("test")}>
-            Welcome to React
-          </h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-  private handleClick = (params: string) => (
-    event: React.MouseEvent<HTMLHeadingElement>
+const App: FunctionComponent = props => {
+  const handleClick = (params: string) => (
+    event: React.MouseEvent<HTMLDivElement>
   ) => {
     console.log(params, event);
   };
-}
+
+  return (<div onClick={handleClick("Bonjour")}>Click Me</div>);
+};
+
+
 
 export default App;
