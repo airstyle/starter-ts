@@ -5,5 +5,4 @@ export class MonObjet {
         this.Nom = n;
         this.Prenom = p;
     }
-   
 }

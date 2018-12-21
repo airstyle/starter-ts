@@ -1,7 +1,10 @@
-import React, { createContext} from "react";
+import { createContext } from "react";
 
-export const { Provider, Consumer} = createContext({});
+export interface IContext {
+  counter?: {
+    get: number;
+    set: React.Dispatch<React.SetStateAction<number>>;
+  };
+}
 
-export const withContext = (Component: any) => (props: any) => (
-  <Consumer>{value => <Component {...value} {...props} />}</Consumer>
-);
+export const Context = createContext<IContext>({});
